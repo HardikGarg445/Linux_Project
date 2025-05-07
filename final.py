@@ -98,7 +98,7 @@ class PortScannerApp:
 
         style = ttk.Style()
         style.theme_use("default")
-        style.configure("Treeview", background="#FFFFFF", foreground="#FFFFFF", fieldbackground="#FFFFFF", borderwidth=1)  # Fix: Light background
+        style.configure("Treeview", background="#FFFFFF", foreground="#000000", fieldbackground="#FFFFFF", borderwidth=1)  # Fix: Light background
         style.configure("Treeview.Heading", background="#212121", foreground="#FFFFFF", relief="flat")
         style.map("Treeview", background=[("selected", "#15375C")])
 
