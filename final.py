@@ -272,15 +272,17 @@ class PortScannerApp:
         if not self.scan_results:
             return messagebox.showerror("Error", "No results to save.")
         # Ask user for file location
-        fp = filedialog.asksaveasfilename(defaultextension=".csv",
-                                        filetypes=[("CSV", "*.csv"), ("JSON", "*.json")])
+        fp = filedialog.asksaveasfilename(
+            defaultextension=".csv",
+            filetypes=[("CSV", "*.csv"), ("JSON", "*.json")]
+        )
         if not fp:
             return
         try:
             if fp.lower().endswith(".json"):  # Save as JSON
                 with open(fp, "w") as f:
                     json.dump(self.scan_results, f, indent=2)
-            else:      # Save as CSV
+            else:  # Save as CSV
                 with open(fp, "w", newline="") as f:
                     w = csv.DictWriter(f, fieldnames=['port', 'type', 'service', 'status'])
                     w.writeheader()
